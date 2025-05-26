@@ -78,12 +78,12 @@ function renderQuestions() {
       choiceInput.name = `question-${i}`;
       choiceInput.value = choice;
 
-      // Restore selection from sessionStorage if available
+      // ✅ Properly check if previously selected
       if (userAnswers[i] === choice) {
         choiceInput.checked = true;
       }
 
-      // Save selection on change
+      // Save selection to session storage
       choiceInput.addEventListener("change", () => {
         userAnswers[i] = choice;
         sessionStorage.setItem("progress", JSON.stringify(userAnswers));
@@ -98,6 +98,7 @@ function renderQuestions() {
     questionsElement.appendChild(questionContainer);
   });
 }
+
 
 // Handle quiz submission
 submitButton.addEventListener("click", () => {

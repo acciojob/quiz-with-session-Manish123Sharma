@@ -81,6 +81,7 @@ function renderQuestions() {
       // ✅ Properly check if previously selected
       if (userAnswers[i] === choice) {
         choiceInput.checked = true;
+		  choiceInput.setAttribute("checked", "true");
       }
 
       // Save selection to session storage
